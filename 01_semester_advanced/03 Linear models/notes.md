@@ -14,3 +14,7 @@ loss
 $$L(w) = \sum_{i=1}^l{(X^T_i W - y_i)^2}$$
 
 $$\frac{\partial L}{\partial w_1} = \sum^l_{i=1}{2(X^T_i W - y_i)x_{i1}}$$
+
+## нормализация
+
+$$ x^{new}_{ij} = \frac{x_{ij} - \mu_j}{\sigma_j} - плохо работает градиентный спуск и другие методы
