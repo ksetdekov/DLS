@@ -127,3 +127,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+01_semester_advanced/11 pytorch homework/MNIST/raw*
