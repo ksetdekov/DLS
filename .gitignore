@@ -128,3 +128,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 01_semester_advanced/11 pytorch homework/MNIST/raw*
+01_semester_advanced/14 simpsons/testset/*
+01_semester_advanced/14 simpsons/train/*
+01_semester_advanced/14 simpsons/journey-springfield.zip
