@@ -36,3 +36,8 @@ CNN
 Мы теряем пространственную информацию изза upsampling, downsampling + stride - теряют пространственную информацию
 
 Можно делать построцессинг после upsampling (CRF postprocessing)
+
+## Трюки
+
+transposed convolution (deconvolution)
+upsampling (stride, add zeros between) + kernel
