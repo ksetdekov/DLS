@@ -10,6 +10,14 @@
 
 ## варианты
 
+### архитектуры
+
+* SegNet
+* DeepLab
+* PSPNet
+* UNet
+* Mask R-CNN - сложнее, это сетки для детекции + что-то еще
+
 ### sliding window
 
 нарезать окном, что центр окна - пиксель. Пройдем по всему изображению и классифицируем - долго и не берем информацию о соседей
@@ -41,3 +49,14 @@ CNN
 
 transposed convolution (deconvolution)
 upsampling (stride, add zeros between) + kernel
+
+## Unet
+
+Тут примерно CNN с deconvolution + skip-connection
+
+Похожа на букву U
+
+### еще трюки unet
+
+* overlap-tile - делаем паддинг, отзеркалив края
+* Loss - pixel-wise Softmax loss with weight (большой вес для границ между классами)
