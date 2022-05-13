@@ -14,3 +14,13 @@
 8. MnasNet (NAS - neural architecture search) - подобранное нейронкой конфигурация сетей.
 9. EfficientNet - b7 - почти лучшее
 10. GhostNet - еще новое, но не очень большой скачек
+
+### object detection
+
+1. что надо предсказать
+    1. есть координаты (top-left, right-bottom)
+    2. есть класс
+    3. есть уверенность
+
+2. есть датасеты (MS coco, open images v6, остальные)
+3. IOU
