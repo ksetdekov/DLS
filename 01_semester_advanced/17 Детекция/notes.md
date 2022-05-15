@@ -24,3 +24,68 @@
 
 2. есть датасеты (MS coco, open images v6, остальные)
 3. IOU
+4. Что есть корректно?
+
+    * TP - когда большой iou
+    * FN - когда не нашли объект
+    * FP - когда не тот класс, мало (IOU < 0.5) пересексли или не пересекли
+5. P/R
+
+    * $Precision = \frac{True Posisitive}{True Positive + False Positive}$
+    * $Recall = \frac{True Posisitive}{True Positive + False Negatives}$
+
+6. Когда много классов - confusion matrix
+7. Mean average precision (mAP)
+8. Сделаем простой детектор:
+    1. У нас есть детектор хороший
+    2. Пройдем скользящим окном по всей картинке с разной формой окна
+    3. Выберем только боксы большой уверенности
+    4. Получили результат
+
+### 2 Stage detectors
+
+#### core ideas
+
+1. не генерировать боксы заранее, мы имеем заранее предположение о боксах (априорные) - нужно выбрать нужное нам подмножество боксов. Anchor boxes
+
+2. регрессируем нужные боксы к нашему датасету (из всех боксов)
+
+3. в каждом боксе - классификация
+
+4. фильтруем плохие предсказания
+
+Multitask
+
+#### examples
+
+1. two stage (proposal-based)
+    * rcnn
+    * fast rcnn
+    * faster rcnn
+    * mask rcnn
+2. one stage
+    * ssd
+    * yolov3
+    * dsod
+    * rfbnet
+3. point-based
+    * centernet
+    * cornernet
+    * extremenet
+
+#### what is 2 stage?
+
+1. RCNN
+    * генерация предположений (selective search)
+    * warp to one shape
+    * regress and classify them
+    * post-process
+2. Fast RCNN
+    * extract feature map with cnn - get feature tensor - this is backbone
+    * for each roi
+        * multi class classification
+        * bounding box regressor
+3. Faster RCNN
+    * RPN - region proposal network для предсказания выбора регионов
+4. Mask RCNN
+    * Добавили третью голову - mask head -  выдает instance segmentation (маску красит внутри)
