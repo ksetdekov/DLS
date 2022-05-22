@@ -89,3 +89,34 @@ Multitask
     * RPN - region proposal network для предсказания выбора регионов
 4. Mask RCNN
     * Добавили третью голову - mask head -  выдает instance segmentation (маску красит внутри)
+
+#### one-stage detectors
+
+SSD, YOLO
+
+##### YOLO
+
+you only look once
+
+1. get features from a backbone network
+2. predict feature map (grid)
+3. predict boxes from grid
+4. post-process predictions
+
+##### conv recap
+
+images -> feature maps
+
+##### SSD
+
+получилось несколько гридов (положений сети) и по ним предсказыванием положение классов. 
+
+1. SSD pipeline
+    1. input -> backbone
+    2. backbone -> feature map
+    3. feature map -> boxes locations and classes inside of them
+2. detection task
+    1. how many boxes?
+    2. what should be the size of an input image
+    3. how to train? (~how to make differentiable)
+
